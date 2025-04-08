@@ -1,7 +1,7 @@
 name: fancy_switch_flutter
 description: "A custom animated switch with smooth transitions and themed backgrounds, ideal for toggling between day and night modes."
 
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/shahparan71/flutter_fancy_image_switch
 repository: https://github.com/shahparan71/flutter_fancy_image_switch
 issue_tracker: https://github.com/shahparan71/flutter_fancy_image_switch/issues
