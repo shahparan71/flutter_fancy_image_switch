@@ -24,7 +24,8 @@ class FancySwitch extends StatefulWidget {
   State<FancySwitch> createState() => _FancySwitchState();
 }
 
-class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStateMixin {
+class _FancySwitchState extends State<FancySwitch>
+    with SingleTickerProviderStateMixin {
   late bool _isOn;
 
   @override
@@ -54,7 +55,8 @@ class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStat
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           image: DecorationImage(
-            image: AssetImage(_isOn ? '${widget.onImagePath}' : '${widget.offImagePath}'),
+            image: AssetImage(
+                _isOn ? '${widget.onImagePath}' : '${widget.offImagePath}'),
             fit: BoxFit.cover,
           ),
         ),
