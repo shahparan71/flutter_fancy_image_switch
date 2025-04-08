@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class FancySwitch extends StatefulWidget {
   final bool initialValue;
-  final String on_image_path;
-  final String off_image_path;
-  final double thumb_size;
+  final String onImagePath;
+  final String offImagePath;
+  final double thumbSize;
   final double height;
   final double width;
   final ValueChanged<bool>? onChanged;
@@ -12,9 +12,9 @@ class FancySwitch extends StatefulWidget {
   const FancySwitch({
     Key? key,
     this.initialValue = false,
-    this.on_image_path = "assets/images/day.png",
-    this.off_image_path = "assets/images/night.png",
-    this.thumb_size = 35,
+    this.onImagePath = "assets/images/day.png",
+    this.offImagePath = "assets/images/night.png",
+    this.thumbSize = 35,
     this.height = 50,
     this.width = 100,
     this.onChanged,
@@ -54,7 +54,7 @@ class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStat
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           image: DecorationImage(
-            image: AssetImage(_isOn ? '${widget.on_image_path}' : '${widget.off_image_path}'),
+            image: AssetImage(_isOn ? '${widget.onImagePath}' : '${widget.offImagePath}'),
             fit: BoxFit.cover,
           ),
         ),
@@ -66,8 +66,8 @@ class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStat
               alignment: _isOn ? Alignment.centerLeft : Alignment.centerRight,
               curve: Curves.easeInOut,
               child: Container(
-                width: widget.thumb_size,
-                height: widget.thumb_size,
+                width: widget.thumbSize,
+                height: widget.thumbSize,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: _isOn ? Colors.yellow : Colors.white,

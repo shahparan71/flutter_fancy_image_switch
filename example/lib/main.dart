@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: FancySwitch(
             initialValue: true,
-            on_image_path: 'assets/images/day.png',
-            off_image_path: 'assets/images/night.png',
-            thumb_size: 50.0,
+            onImagePath: 'assets/images/day.png',
+            offImagePath: 'assets/images/night.png',
+            thumbSize: 50.0,
             height: 60.0,
             width: 120.0,
             onChanged: (val) {
