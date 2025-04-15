@@ -8,6 +8,8 @@ class FancySwitch extends StatefulWidget {
   final double thumbSize;
   final double height;
   final double width;
+  final Color enableColor;
+  final Color disableColor;
   final ValueChanged<bool>? onChanged;
 
   const FancySwitch({
@@ -18,6 +20,8 @@ class FancySwitch extends StatefulWidget {
     this.thumbSize = 35,
     this.height = 50,
     this.width = 100,
+    this.enableColor = Colors.green,
+    this.disableColor = Colors.grey,
     this.onChanged,
   }) : super(key: key);
 
@@ -78,7 +82,7 @@ class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStat
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
-          color: bgImage == null ? (_isOn ? Colors.green : Colors.grey[800]) : null,
+          color: bgImage == null ? (_isOn ? widget.enableColor : widget.disableColor) : null,
           image: bgImage,
         ),
         child: Stack(

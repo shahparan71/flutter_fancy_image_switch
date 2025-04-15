@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
             thumbSize: 50.0,
             height: 60.0,
             width: 120.0,
+            enableColor: Colors.lightGreen,
+            disableColor: Colors.black26,
             onChanged: (val) {
               print('Switch state: $val');
             },
