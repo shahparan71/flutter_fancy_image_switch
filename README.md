@@ -17,4 +17,4 @@ A beautiful animated switch widget that toggles between two themed images (e.g. 
 
 ```yaml
 dependencies:
-  fancy_image_switch: ^0.0.6
+  fancy_image_switch: ^0.0.7

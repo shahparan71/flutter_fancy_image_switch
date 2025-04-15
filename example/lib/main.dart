@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: FancySwitch(
             initialValue: true,
-            onImagePath: 'assets/images/day.png',
-            offImagePath: 'assets/images/night.png',
+            onImagePath: 'assets/images/day.pn',
+            offImagePath: 'assets/images/night.pn',
             thumbSize: 50.0,
             height: 60.0,
             width: 120.0,
@@ -31,5 +31,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//flutter pub publish --dry-run
-//flutter pub publish
+
