@@ -1,7 +1,6 @@
 import 'package:fancy_switch_flutter/fancy_switch_flutter.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }

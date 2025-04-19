@@ -115,11 +115,11 @@ class _FancySwitchState extends State<FancySwitch>
     final bool useImage = _isOn ? _hasOnImage : _hasOffImage;
     final DecorationImage? bgImage = useImage
         ? DecorationImage(
-      image: AssetImage(
-        _isOn ? widget.onImagePath : widget.offImagePath,
-      ),
-      fit: BoxFit.cover,
-    )
+            image: AssetImage(
+              _isOn ? widget.onImagePath : widget.offImagePath,
+            ),
+            fit: BoxFit.cover,
+          )
         : null;
 
     return GestureDetector(
