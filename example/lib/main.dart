@@ -1,4 +1,4 @@
-import 'package:fancy_switch_flutter/f_switch_flutter.dart';
+import 'package:fancy_switch_flutter/fancy_switch_flutter.dart';
 import 'package:flutter/material.dart';
 
 
