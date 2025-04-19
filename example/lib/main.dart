@@ -1,5 +1,6 @@
+import 'package:fancy_switch_flutter/f_switch_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:fancy_switch_flutter/src/fancy_switch.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -32,5 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
