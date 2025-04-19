@@ -1,17 +1,63 @@
+/// A customizable Flutter switch widget with fancy animation effects and optional images.
+///
+/// The [FancySwitch] can toggle between two states (on/off) with animated thumb movement,
+/// optional background images, and customizable colors.
+library fancy_switch_flutter;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// A customizable animated switch widget with optional images and color transitions.
+///
+/// The [FancySwitch] widget provides a smooth and interactive toggle UI component,
+/// useful for themes or custom toggles.
+///
+/// Example usage:
+/// ```dart
+/// FancySwitch(
+///   initialValue: true,
+///   onChanged: (value) {
+///     print("Switch is now: $value");
+///   },
+/// )
+/// ```
 class FancySwitch extends StatefulWidget {
+  /// Whether the switch is initially turned on.
   final bool initialValue;
+
+  /// Path to the image displayed when the switch is turned on.
+  ///
+  /// Default: `"assets/images/day.png"`
   final String onImagePath;
+
+  /// Path to the image displayed when the switch is turned off.
+  ///
+  /// Default: `"assets/images/night.png"`
   final String offImagePath;
+
+  /// Diameter of the circular thumb.
   final double thumbSize;
+
+  /// Height of the switch container.
   final double height;
+
+  /// Width of the switch container.
   final double width;
+
+  /// The background color when the switch is in the "enabled" state
+  /// (used when image is not present).
   final Color enableColor;
+
+  /// The background color when the switch is in the "disabled" state
+  /// (used when image is not present).
   final Color disableColor;
+
+  /// Callback triggered when the switch is toggled.
   final ValueChanged<bool>? onChanged;
 
+  /// Creates a [FancySwitch] widget.
+  ///
+  /// The [onChanged] callback provides the updated boolean value.
   const FancySwitch({
     Key? key,
     this.initialValue = false,
@@ -42,6 +88,7 @@ class _FancySwitchState extends State<FancySwitch>
     _checkAssets();
   }
 
+  /// Checks if the provided image assets exist before using them.
   Future<void> _checkAssets() async {
     final onExists = await assetExists(widget.onImagePath);
     final offExists = await assetExists(widget.offImagePath);
@@ -53,6 +100,7 @@ class _FancySwitchState extends State<FancySwitch>
     }
   }
 
+  /// Toggles the switch state and invokes the [onChanged] callback if available.
   void _toggleSwitch() {
     setState(() {
       _isOn = !_isOn;
@@ -67,11 +115,11 @@ class _FancySwitchState extends State<FancySwitch>
     final bool useImage = _isOn ? _hasOnImage : _hasOffImage;
     final DecorationImage? bgImage = useImage
         ? DecorationImage(
-            image: AssetImage(
-              _isOn ? widget.onImagePath : widget.offImagePath,
-            ),
-            fit: BoxFit.cover,
-          )
+      image: AssetImage(
+        _isOn ? widget.onImagePath : widget.offImagePath,
+      ),
+      fit: BoxFit.cover,
+    )
         : null;
 
     return GestureDetector(
@@ -117,6 +165,9 @@ class _FancySwitchState extends State<FancySwitch>
   }
 }
 
+/// Checks if an asset exists at the given [assetPath].
+///
+/// Returns `true` if the asset can be loaded, otherwise `false`.
 Future<bool> assetExists(String assetPath) async {
   try {
     await rootBundle.load(assetPath);
