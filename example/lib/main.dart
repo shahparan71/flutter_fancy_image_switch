@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             enableColor: Colors.lightGreen,
             disableColor: Colors.black26,
             onChanged: (val) {
-              print('Switch state: $val');
+              //print('Switch state: $val');
             },
           ),
         ),

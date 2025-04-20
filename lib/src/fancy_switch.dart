@@ -1,9 +1,3 @@
-/// A customizable Flutter switch widget with fancy animation effects and optional images.
-///
-/// The [FancySwitch] can toggle between two states (on/off) with animated thumb movement,
-/// optional background images, and customizable colors.
-library fancy_switch_flutter;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -59,7 +53,7 @@ class FancySwitch extends StatefulWidget {
   ///
   /// The [onChanged] callback provides the updated boolean value.
   const FancySwitch({
-    Key? key,
+    super.key,
     this.initialValue = false,
     this.onImagePath = "assets/images/day.png",
     this.offImagePath = "assets/images/night.png",
@@ -69,14 +63,13 @@ class FancySwitch extends StatefulWidget {
     this.enableColor = Colors.green,
     this.disableColor = Colors.grey,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   State<FancySwitch> createState() => _FancySwitchState();
 }
 
-class _FancySwitchState extends State<FancySwitch>
-    with SingleTickerProviderStateMixin {
+class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStateMixin {
   late bool _isOn;
   bool _hasOnImage = true;
   bool _hasOffImage = true;
@@ -131,9 +124,7 @@ class _FancySwitchState extends State<FancySwitch>
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
-          color: bgImage == null
-              ? (_isOn ? widget.enableColor : widget.disableColor)
-              : null,
+          color: bgImage == null ? (_isOn ? widget.enableColor : widget.disableColor) : null,
           image: bgImage,
         ),
         child: Stack(
