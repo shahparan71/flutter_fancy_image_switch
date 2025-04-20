@@ -69,7 +69,8 @@ class FancySwitch extends StatefulWidget {
   State<FancySwitch> createState() => _FancySwitchState();
 }
 
-class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStateMixin {
+class _FancySwitchState extends State<FancySwitch>
+    with SingleTickerProviderStateMixin {
   late bool _isOn;
   bool _hasOnImage = true;
   bool _hasOffImage = true;
@@ -124,7 +125,9 @@ class _FancySwitchState extends State<FancySwitch> with SingleTickerProviderStat
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
-          color: bgImage == null ? (_isOn ? widget.enableColor : widget.disableColor) : null,
+          color: bgImage == null
+              ? (_isOn ? widget.enableColor : widget.disableColor)
+              : null,
           image: bgImage,
         ),
         child: Stack(
