@@ -11,6 +11,11 @@ topics:
   - custom-widget
   - flutter
 
+analyzer:
+  exclude:
+    - test/**
+    - build/**
+
 environment:
   sdk: ^3.6.1
   flutter: ">=1.17.0"
